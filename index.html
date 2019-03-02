@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="GUI zur Erstellung von ELBE Konfigurationen">
+<title>Elbe GUI</title>
+<link href="css/styles.css" rel="stylesheet" type="text/css">
+<script type="application/javascript" src="https://unpkg.com/react@16.0.0/umd/react.production.min.js"></script>
+<script type="application/javascript" src="https://unpkg.com/react-dom@16.0.0/umd/react-dom.production.min.js"></script>
+<script type="application/javascript" src="https://unpkg.com/babel-standalone@6.26.0/babel.js"></script>
+</head>
+
+<body>
+<header>
+  <h1>ELBE GUI</h1>
+  <div class="burger-menu"><img src="images/Burger_Menu.svg" alt="Elbe Gui Menu Button"/></div>
+</header>
+<div class="container">
+  <nav>
+    <div class="button-active">Configure</div>
+    <div class="button">Build</div>
+    <div class="button">Store</div>
+    <div class="button">Manage</div>
+    <div class="button">Learn</div>
+  </nav>
+  <main id="root">
+    <div class="dlg">
+      <div class="row">
+        <input type="text" placeholder="enter project name"/>
+      </div>
+      <div class="row">
+        <textarea placeholder="enter project description"></textarea>
+      </div>
+      <div class="row">
+        <div class="button-dlg">Create</div>
+        <div class="button-dlg" id="btn-cancel">Cancel</div>
+      </div>
+    </div>
+  </main>
+</div>
+<footer>
+  <div class="social-icons">Icons</div>
+  <div class="copyright">COPYRIGHT 2019 © MARTIN STEIH</div>
+</footer>
+</body>
+</html>
