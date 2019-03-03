@@ -25,24 +25,102 @@
     <div class="button">Learn</div>
   </nav>
   <main id="root">
-      <h2>Select a project</h2>
-      <ul>
-		  <li class="list-item"><img class="more-btn" src="images/SVG/More_Btn.svg" alt="Show more button"/>Project 1 name</li>
-		  <li class="list-item"><img class="more-btn" src="images/SVG/More_Btn.svg" alt="Show more button"/>Project 2 name</li>
-      </ul>
-		<div class="dlg">
-        <div class="row">
-          <input type="text" placeholder="enter project name"/>
+  </main>
+  <script type="text/babel">
+
+function ListItem(props){
+    return(
+      <li className="list-item">
+        <img className="more-btn" src="images/SVG/More_Btn.svg" alt="Show more button"/>
+        {props.projectName}
+      </li>
+    );
+  }
+
+  class CreateProject extends React.Component{
+    constructor(props){
+      super(props);
+      this.state={
+        projectName : '',
+        projectDescription : '',
+      };
+    }
+
+    updateName(e){
+      this.setState(
+        {
+          projectName : e.target.value,
+        }
+      );
+    }
+
+    updateDescription(e){
+      this.setState(
+        {
+          projectDescription : e.target.value,
+        }
+      );
+    }
+
+    render(){
+      return(
+        <div>
+        <div className="dlg">
+        <div className="row">
+          <input type="text" placeholder="enter project name" value={this.state.projectName} onChange={(e) => this.updateName(e)}/>
         </div>
-        <div class="row">
-          <textarea placeholder="enter project description"></textarea>
+        <div className="row">
+          <textarea placeholder="enter project description" value={this.state.projectDescription} onChange={(e) => this.updateDescription(e)}></textarea>
         </div>
-        <div class="row">
-          <div class="button-dlg">Create</div>
-          <div class="button-dlg" id="btn-cancel">Cancel</div>
+        <div className="row">
+          <div className="button-dlg" onClick={() => this.props.handleCreate(this.state.projectName, this.state.projectDescription)}>Create</div>
+          <div className="button-dlg" id="btn-cancel" onClick={() => this.props.handleCancel()}>Cancel</div>
         </div>
       </div>
-  </main>
+      </div>
+      );
+    }
+  }
+
+  class ElbeGuiApp extends React.Component{
+    constructor(props){
+      super(props);
+      this.state={
+        projects : Array(),
+      };
+    }
+
+    handleCancel(){
+
+    }
+    handleCreate(name, description){
+      const projects = this.state.projects;
+      this.setState(
+        {
+          projects : projects.concat({projectName : name, projectDescription : description,}),
+        }
+      );
+    }
+
+    render(){
+      const items = this.state.projects.map((step, item) => {
+        return(
+        <ListItem key={item} projectName={this.state.projects[item].projectName} />
+        );
+      });
+      return(
+        <div>
+      <h2>Select a project</h2>
+      <ul>
+        {items}
+      </ul>
+      <CreateProject handleCancel={() => this.handleCancel()} handleCreate={(name, description) => this.handleCreate(name, description)}/>
+      </div>
+      );
+    }
+  }
+  ReactDOM.render(<ElbeGuiApp />, document.getElementById('root'));
+  </script>
 </div>
 <footer>
   <div class="social-icons">Icons</div>

@@ -11,9 +11,8 @@ Features
 ----------
 Elbe GUI helps your to:
 
-------
+
 #create projects and configure existing ones
 #configure the projects root file system
 #export configurations as Elbe XML files
 #build a root file system using Elbe
------
