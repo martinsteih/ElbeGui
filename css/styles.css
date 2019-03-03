@@ -24,7 +24,17 @@ h1 {
 main {
     background-color: rgba(240,240,240,1.00);
     box-shadow: 0px 0px 5px 4px rgba(0,0,0,0.40);
+    width: 70%;
     float: left;
+    padding-left: 2px;
+    padding-right: 2px;
+    padding-bottom: 2px;
+    padding-top: 2px;
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
 }
 footer {
     background-color: rgba(0,0,0,0.80);
@@ -32,20 +42,31 @@ footer {
     padding-bottom: 40px;
     color: rgba(255,255,255,1.00);
 }
+ul {
+    padding-left: 0px;
+    list-style-type: none;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
 .social-icons {
     float: left;
+    margin-left: 10px;
 }
 .copyright {
     float: right;
     width: 280px;
+    margin-right: 10px;
 }
 .package-list-elem {
     display: table-row;
 }
 .burger-menu {
-	width: 60px;
-	float: left;
-	margin-top: -57px;
+    width: 60px;
+    float: left;
+    margin-top: -57px;
+    margin-left: 5px;
 }
 nav {
     float: left;
@@ -94,8 +115,8 @@ h3{
     padding-bottom: 8px;
     width: 48%;
     text-align: center;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left : auto;
+    margin-right : auto;
 }
 #btn-cancel {
     background-color: rgba(240,240,240,1.00);
@@ -113,6 +134,7 @@ textarea {
     border-radius: 16px;
     border-width: 1px;
     background-color: rgba(215,215,215,1.00);
+	box-shadow: 0px 0px 5px rgba(0, 0, 0, 1.0);
     padding-top: 10px;
     padding-right: 10px;
     padding-bottom: 10px;
@@ -129,4 +151,32 @@ input {
     clear: both;
     display: block;
     content: "";
+}
+.group-box {
+    margin: auto 2px auto 2px;
+    float: left;
+    border: 1px solid rgba(0,0,0,0.50);
+    border-radius: 5px;
+}
+
+.list-item{
+    background-color: rgba(215, 215, 215, 1.0);
+    padding-top: 10px;
+    padding-right: 0px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px rgba(0,0,0, 0.5);
+    -webkit-box-shadow: 0px 0px 5px rgba(0,0,0, 0.5);
+    margin-top: 7px;
+    margin-bottom: 7px;
+}
+.more-btn {
+    width: 30px;
+    float: right;
+    margin-right: 13px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 5px;
+    padding-right: 5px;
 }

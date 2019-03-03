@@ -17,25 +17,31 @@
 </header>
 <div class="container">
   <nav>
-    <div class="button-active">Configure</div>
+    <div class="button-active">Start</div>
+	<div class="button">Configure</div>
     <div class="button">Build</div>
     <div class="button">Store</div>
     <div class="button">Manage</div>
     <div class="button">Learn</div>
   </nav>
   <main id="root">
-    <div class="dlg">
-      <div class="row">
-        <input type="text" placeholder="enter project name"/>
+      <h2>Select a project</h2>
+      <ul>
+		  <li class="list-item"><img class="more-btn" src="images/SVG/More_Btn.svg" alt="Show more button"/>Project 1 name</li>
+		  <li class="list-item"><img class="more-btn" src="images/SVG/More_Btn.svg" alt="Show more button"/>Project 2 name</li>
+      </ul>
+		<div class="dlg">
+        <div class="row">
+          <input type="text" placeholder="enter project name"/>
+        </div>
+        <div class="row">
+          <textarea placeholder="enter project description"></textarea>
+        </div>
+        <div class="row">
+          <div class="button-dlg">Create</div>
+          <div class="button-dlg" id="btn-cancel">Cancel</div>
+        </div>
       </div>
-      <div class="row">
-        <textarea placeholder="enter project description"></textarea>
-      </div>
-      <div class="row">
-        <div class="button-dlg">Create</div>
-        <div class="button-dlg" id="btn-cancel">Cancel</div>
-      </div>
-    </div>
   </main>
 </div>
 <footer>
