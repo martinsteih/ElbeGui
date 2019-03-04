@@ -118,8 +118,14 @@ h3{
     margin-left : auto;
     margin-right : auto;
     cursor : default;
+    margin: 1px;
     
 }
+
+.button-dlg-disabled{
+    background-color: rgba(240,240,240,1.00);
+}
+
 #btn-cancel {
     background-color: rgba(240,240,240,1.00);
 }

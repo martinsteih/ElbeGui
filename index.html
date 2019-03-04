@@ -43,6 +43,7 @@ function ListItem(props){
       this.state={
         projectName : '',
         projectDescription : '',
+        isNameSet : false,
       };
     }
 
@@ -50,6 +51,7 @@ function ListItem(props){
       this.setState(
         {
           projectName : e.target.value,
+          isNameSet : e.target.value ? true : false,
         }
       );
     }
@@ -63,17 +65,18 @@ function ListItem(props){
     }
 
     render(){
+      const create = this.state.isNameSet ? <div className="button-dlg" onClick={() => this.props.handleCreate(this.state.projectName, this.state.projectDescription)}>Create</div> : <div className="button-dlg button-dlg-disabled">Create</div>;
       return(
         <div>
         <div className="dlg">
         <div className="row">
-          <input type="text" placeholder="enter project name" value={this.state.projectName} onChange={(e) => this.updateName(e)}/>
+          <input type="text" placeholder="enter project name" value={this.state.projectName} onChange={(e) => this.updateName(e)} required />
         </div>
         <div className="row">
           <textarea placeholder="enter project description" value={this.state.projectDescription} onChange={(e) => this.updateDescription(e)}></textarea>
         </div>
         <div className="row">
-          <div className="button-dlg" onClick={() => this.props.handleCreate(this.state.projectName, this.state.projectDescription)}>Create</div>
+          {create}
           <div className="button-dlg" id="btn-cancel" onClick={() => this.props.handleCancel()}>Cancel</div>
         </div>
       </div>
@@ -91,7 +94,7 @@ function ListItem(props){
     }
 
     handleCancel(){
-
+      
     }
     handleCreate(name, description){
       const projects = this.state.projects;
