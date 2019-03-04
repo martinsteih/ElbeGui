@@ -188,3 +188,26 @@ input {
     padding-left: 5px;
     padding-right: 5px;
 }
+
+.add-btn{
+    margin-right: 10px;
+    padding: 2px;
+    width: 25px;
+    float: right;
+    cursor: default;
+}
+
+.hdr{
+    margin: 2px 0px 2px 0px;
+}
+
+.hdr:after{
+    clear: both;
+    display: block;
+    content: '';
+}
+
+.proj-list-header{
+    display: inline;
+    max-width: 50%;
+}

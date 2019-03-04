@@ -90,11 +90,14 @@ function ListItem(props){
       super(props);
       this.state={
         projects : Array(),
+        isCreateProjectDialogVisible : false,
       };
     }
 
     handleCancel(){
-      
+      this.setState({
+        isCreateProjectDialogVisible : false,
+      });
     }
     handleCreate(name, description){
       const projects = this.state.projects;
@@ -111,13 +114,19 @@ function ListItem(props){
         <ListItem key={item} projectName={this.state.projects[item].projectName} />
         );
       });
+      const createProjectDialog = this.state.isCreateProjectDialogVisible ? <CreateProject handleCancel={() => this.handleCancel()} handleCreate={(name, description) => this.handleCreate(name, description)}/> : null;
       return(
         <div>
-      <h2>Select a project</h2>
-      <ul>
-        {items}
-      </ul>
-      <CreateProject handleCancel={() => this.handleCancel()} handleCreate={(name, description) => this.handleCreate(name, description)}/>
+          <div className="hdr">
+            <h2 className="proj-list-header">Select a project</h2>
+            <div className="add-btn" onClick={() => {this.setState({isCreateProjectDialogVisible : true,});}}>
+              <img src="images/svg/Add_Button.svg" alt="add project button" />
+            </div>
+          </div>
+        <ul>
+          {items}
+        </ul>
+        {createProjectDialog}
       </div>
       );
     }
