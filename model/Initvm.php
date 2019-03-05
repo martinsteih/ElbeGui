@@ -1,7 +1,6 @@
 <?php
 
-class InitVm
-implements\ JsonSerializable {
+class InitVm implements JsonSerializable {
 	private $buildType;
 	private $mirror;
 	private $noauth;
