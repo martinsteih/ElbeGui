@@ -5,10 +5,16 @@ header( 'Access-Control-Allow-Methods: POST' );
 header( 'Access-Control-Allow-Headers: Access-Control-Allow-Headers, Content-Type, Access-Control-Allow-Methods, Authorization, X-Requested-With' );
 
 include_once '../model/Project.php';
+include_once '../config/Database.php';
+
 
 $data = json_decode( file_get_contents( "php://input" ) );
 
 $project = new Project($data->name, $data->description);
+
+$database = new Database();
+$db = $database->Connect();
+//$result = $project->writeToDb($db);
 
 $projects = array(new Project('First', 'Desc'), new Project('Second', 'Desc'), $project);
 
